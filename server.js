@@ -30,6 +30,9 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 // Database configuration with mongoose
+
+//for local
+// mongoose.connect("mongodb://localhost/hackerscraper");
 mongoose.connect("mongodb://heroku_153dc2m7:4et23o11uc5cqjejnb7o9r2ug6@ds123361.mlab.com:23361/heroku_153dc2m7");
 var db = mongoose.connection;
 
@@ -50,7 +53,7 @@ db.once("open", function() {
 // A GET request to scrape the echojs website
 app.get("/scrape", function(req, res) {
   // First, we grab the body of the html with request
-  request("https://news.ycombinator.com/", function(error, response, html) {
+  request("http://news.ycombinator.com/", function(error, response, html) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(html);
     // Now, we grab every h2 within an article tag, and do the following:
