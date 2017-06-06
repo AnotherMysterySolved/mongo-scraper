@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Scraping With Mongoose</title>
     <style>
-      body { background-color: #F2F6D0 }
+      body { background-color: #82baff }
       #wrapper {
         width: 960px;
         margin-left: auto;
@@ -24,22 +24,34 @@
       textarea, input {
         display: block;
         width: 100%;
-        background-color: #FCF5C7;
+        background-color: #82baff;
+        border-color: black;
+        border-radius: 7px;
+        margin-bottom: 5px;
       }
       input {
         height: 36px;
         font-size: 24px;
+        font-family: sans-serif;
       }
       textarea {
         height: 200px;
         font-size: 18px;
+        font-family: sans-serif;
+      }
+      h1,h2,h3,h4,h5,p,span {
+        font-family: sans-serif;
+      }
+      hr {
+        border-color: black;
       }
     </style>
   </head>
   <body>
     <div id="wrapper">
-      <h1>Note Scraper</h1>
-      <h2><i>If you can do this...the homework should be no problem.</i></h2>
+      <h1>Hacker News Scraper</h1>
+      <h3><i>First "/scrape" then reload page. <br>Once loaded, click on each item that you would like to add notes to.</i></h3>
+      <hr>
       <div id="articles"></div>
       <div id="notes"></div>
     </div>

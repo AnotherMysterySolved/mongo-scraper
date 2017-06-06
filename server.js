@@ -60,8 +60,8 @@ app.get("/scrape", function(req, res) {
       var result = {};
 
       // Add the text and href of every link, and save them as properties of the result object
-      result.title = $(this).children("a").text();
-      result.link = $(this).children("a").attr("href");
+      result.title = $(this).prev().text();
+      result.link = $(this).prev().attr("href");
 
       // Using our Article model, create a new entry
       // This effectively passes the result object to the entry (and the title and link)
